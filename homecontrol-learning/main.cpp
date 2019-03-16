@@ -1,7 +1,9 @@
-#include <iostream>
+#include "programManager.h"
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	programManager ProgramManager;
+
+	ProgramManager.run();
 }
 
