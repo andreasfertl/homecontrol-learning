@@ -8,5 +8,5 @@ logger::logger()
 
 void logger::logg(const std::wstring& str)
 {
-	std::wcout << str;
+	m_SerializeFunctionCalls.run([str]() { std::wcout << str; });
 }
