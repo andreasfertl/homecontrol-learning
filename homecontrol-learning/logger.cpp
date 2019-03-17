@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
 #include "logger.h"
+#include "iRun.h"
 
-logger::logger()
+logger::logger(struct iRun& IRun) :
+	m_SerializeFunctionCalls(IRun)
 {
 }
 

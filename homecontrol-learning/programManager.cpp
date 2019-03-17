@@ -4,14 +4,16 @@
 #include "programManager.h"
 #include "logger.h"
 #include "logging.h"
+#include "seriealizeFunctions.h"
 
 
 class programManagerImpl {
 
 public:
 	programManagerImpl() :
-		m_LoggManager(),
-		m_Run(true)
+		m_Run(true),
+		m_SerializeFunctionCalls(),
+		m_LoggManager(m_SerializeFunctionCalls)
 	{
 		_logg(m_LoggManager, L"Startup");
 	}
@@ -38,8 +40,10 @@ public:
 	}
 
 private:
-	logger            m_LoggManager;
-	std::atomic<bool> m_Run;
+	std::atomic<bool>   m_Run;
+	seriealizeFunctions m_SerializeFunctionCalls;
+	logger              m_LoggManager;
+
 };
 
 

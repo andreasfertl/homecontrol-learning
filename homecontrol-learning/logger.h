@@ -1,16 +1,15 @@
 #pragma once
 #include "ilogger.h"
-#include "seriealizeFunctions.h"
 
 class logger: public ilogger {
 
 public:
-	logger();
+	logger(struct iRun& IRun);
 
 	//implementation of ilogger
 	void logg(const std::wstring& str) override;
 
 private:
-	seriealizeFunctions m_SerializeFunctionCalls;
+	struct iRun& m_SerializeFunctionCalls;
 
 };
