@@ -5,25 +5,6 @@
 #include "logger.h"
 #include "logging.h"
 #include "seriealizeFunctions.h"
-#include "iRun.h"
-
-namespace {
-
-	class unorderdFunctionCalls : public iRun {
-	public:
-		//implementation of iRun
-		void run(const std::function<void()>&& func) override { func(); };
-		void run(const std::function<void()>& func) override { func(); };
-	};
-
-	std::wstring getThreadId() {
-		std::wstringstream wss;
-		std::this_thread::get_id()._To_text(wss);
-
-		return wss.str();
-	}
-}
-
 
 class programManagerImpl {
 
@@ -31,25 +12,9 @@ public:
 	programManagerImpl() :
 		m_Run(true),
 		m_SerializeFunctionCalls(),
-		m_UnorderdFunctionCalls(),
-		m_LoggManager(m_UnorderdFunctionCalls)
+		m_LoggManager(m_SerializeFunctionCalls)
 	{
 		_logg(m_LoggManager, L"Startup");
-
-
-		std::vector<std::thread> threads;
-		//spawn threads
-		for (int i = 0; i < 10; i++)
-		{
-			threads.emplace_back([this]() {
-				_logg(this->m_LoggManager, L"Printout from thread id: " + getThreadId());
-			});
-		}
-
-
-		// join/wait for the end of the threads
-		for (auto& t : threads)
-			t.join();
 	}
 
 	void run()
@@ -76,7 +41,6 @@ public:
 private:
 	std::atomic<bool>   m_Run;
 	seriealizeFunctions m_SerializeFunctionCalls;
-	unorderdFunctionCalls m_UnorderdFunctionCalls;
 	logger              m_LoggManager;
 
 };
