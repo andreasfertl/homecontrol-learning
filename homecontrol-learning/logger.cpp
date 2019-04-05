@@ -2,15 +2,17 @@
 #include <string>
 #include "logger.h"
 #include "iRun.h"
+#include "ilogger.h"
 
-logger::logger(struct iRun& IRun) :
-	m_SerializeFunctionCalls(IRun)
+logger::logger(struct ilogger& iLogger, struct iRun& IRun) :
+	m_ILogger(iLogger),
+	m_Context(IRun)
 {
 }
 
 void logger::logg(const std::wstring& str)
 {
-	m_SerializeFunctionCalls.run([str]() {
-		std::wcout << str;
+	m_Context.run([this, str]() {
+		this->m_ILogger.logg(str);
 	});
 }

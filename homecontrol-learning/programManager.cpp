@@ -2,6 +2,7 @@
 #include <chrono>
 #include <atomic>
 #include "programManager.h"
+#include "consoleLogger.h"
 #include "logger.h"
 #include "logging.h"
 #include "seriealizeFunctions.h"
@@ -12,7 +13,8 @@ public:
 	programManagerImpl() :
 		m_Run(true),
 		m_SerializeFunctionCalls(),
-		m_LoggManager(m_SerializeFunctionCalls)
+		m_ConsoleLogger(),
+		m_LoggManager(m_ConsoleLogger, m_SerializeFunctionCalls)
 	{
 		_logg(m_LoggManager, L"Startup");
 	}
@@ -41,6 +43,7 @@ public:
 private:
 	std::atomic<bool>   m_Run;
 	seriealizeFunctions m_SerializeFunctionCalls;
+	consoleLogger		m_ConsoleLogger;
 	logger              m_LoggManager;
 
 };
