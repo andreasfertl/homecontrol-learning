@@ -1,5 +1,5 @@
-# Starter pipeline
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
-    clean: true
+    platform: 'x86'
+    configuration: 'release'
