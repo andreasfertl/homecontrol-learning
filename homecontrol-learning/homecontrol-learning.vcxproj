@@ -169,7 +169,6 @@
     <ClInclude Include="logger.h" />
     <ClInclude Include="logging.h" />
     <ClInclude Include="programManager.h" />
-    <ClInclude Include="queue.h" />
     <ClInclude Include="seriealizeFunctions.h" />
     <ClInclude Include="thread.h" />
   </ItemGroup>

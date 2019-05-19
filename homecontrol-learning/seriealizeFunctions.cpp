@@ -39,14 +39,23 @@ void seriealizeFunctions::handler()
 {
 	while (!m_Stop)
 	{
-		std::unique_lock<std::mutex> lk(m_Event.m_Mutex);
-		m_Event.m_Condition.wait(lk, [this]() { return !this->m_Queue.empty(); });
-		//clear the queue
-		while (!m_Queue.empty())
+		std::queue<std::function<void()>> handlerQueue;
+
 		{
-			m_Queue.front()();
-			m_Queue.pop();
+			std::unique_lock<std::mutex> lk(m_Event.m_Mutex);
+			m_Event.m_Condition.wait(lk, [this]() { return !this->m_Queue.empty(); });
+			//just "swap" the workload to another queue to be able to hold the lock as little as possible
+			m_Queue.swap(handlerQueue);
 		}
+
+		//and finally call all the functions to be handled
+		while (!handlerQueue.empty())
+		{
+			auto& callFunction = handlerQueue.front();
+			callFunction();
+			handlerQueue.pop();
+		}
+
 	}
 }
 
