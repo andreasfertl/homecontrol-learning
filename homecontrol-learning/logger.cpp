@@ -4,9 +4,9 @@
 #include "iRun.h"
 #include "ilogger.h"
 
-logger::logger(struct ilogger& iLogger, struct iRun& IRun) :
+logger::logger(struct ilogger& iLogger) :
 	m_ILogger(iLogger),
-	m_Context(IRun)
+	m_Context()
 {
 }
 
