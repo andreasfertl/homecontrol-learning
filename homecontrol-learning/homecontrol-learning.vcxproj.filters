@@ -59,5 +59,11 @@
     <ClInclude Include="iTread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SimpleLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="queuedLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -169,7 +169,9 @@
     <ClInclude Include="logger.h" />
     <ClInclude Include="logging.h" />
     <ClInclude Include="programManager.h" />
+    <ClInclude Include="queuedLogger.h" />
     <ClInclude Include="seriealizeFunctions.h" />
+    <ClInclude Include="SimpleLogger.h" />
     <ClInclude Include="thread.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
