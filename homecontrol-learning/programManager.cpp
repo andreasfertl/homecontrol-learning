@@ -23,6 +23,8 @@ public:
 		m_MyLogger(m_SimpleLogger),
 		manyThreads()
 	{
+		m_MyLogger.logg(L"string to log\r\n");
+
 		_logg(m_MyLogger, L"Startup");
 
 		for (unsigned int threadcount = 0; threadcount < 10; threadcount++) {
@@ -56,7 +58,6 @@ public:
 
 	void stop()
 	{
-		_logg(m_MyLogger, L"Stopping");
 		m_Run = false;
 	}
 
