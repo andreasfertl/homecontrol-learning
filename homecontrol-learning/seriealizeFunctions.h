@@ -3,6 +3,7 @@
 #include <thread>
 #include <mutex>
 #include <queue>
+#include <functional>
 #include <condition_variable>
 #include "iRun.h"
 

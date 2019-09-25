@@ -2,11 +2,11 @@
 #include <iostream>
 #include <string>
 #include "ilogger.h"
-#include <functional>
 #include "seriealizeFunctions.h"
 
-struct queuedLogger : public ilogger {
+class queuedLogger : public ilogger {
 
+public:
 	queuedLogger() :
 		m_SerializeFunctions() {
 	}

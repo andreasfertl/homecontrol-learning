@@ -7,8 +7,9 @@
 #include <functional>
 #include <atomic>
 
-struct consoleLogger : public ilogger {
+class consoleLogger : public ilogger {
 
+public:
 	consoleLogger() : 
 		m_StringsToPrint(),
 		m_Run(true),
