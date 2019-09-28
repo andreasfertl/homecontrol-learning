@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include "seriealizeFunctions.h"
 #include "queuedLogger.h"
