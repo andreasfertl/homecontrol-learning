@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="programManager.cpp" />
+    <ClCompile Include="queuedLogger.cpp" />
     <ClCompile Include="seriealizeFunctions.cpp" />
     <ClCompile Include="thread.cpp" />
   </ItemGroup>
