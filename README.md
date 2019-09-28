@@ -11,4 +11,6 @@ You need to download Visual Studio 2019 and install it with the C++ development 
 
 ### Explanations/Instructions on my blog
 #### The power of interfaces: [link](https://www.experienceprogramming.net/?p=49)
+#### Compilation Firewall or pimpl pattern in c++: [link](https://www.experienceprogramming.net/?p=103)
+
 
