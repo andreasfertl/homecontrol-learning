@@ -2,13 +2,10 @@
 #include <chrono>
 #include <atomic>
 #include "programManager.h"
-#include "consoleLogger.h"
-#include "logger.h"
 #include "logging.h"
 #include "seriealizeFunctions.h"
 #include "thread.h"
 #include "iTread.h"
-#include "SimpleLogger.h"
 #include "queuedLogger.h"
 
 
@@ -17,14 +14,10 @@ class programManagerImpl {
 public:
 	programManagerImpl() :
 		m_Run(true),
-		m_SimpleLogger(),
-		m_ConsoleLogger(),
 		m_QueuedLogger(),
-		m_MyLogger(m_SimpleLogger),
+		m_MyLogger(m_QueuedLogger),
 		manyThreads()
 	{
-		m_MyLogger.logg(L"string to log\r\n");
-
 		_logg(m_MyLogger, L"Startup");
 
 		for (unsigned int threadcount = 0; threadcount < 10; threadcount++) {
@@ -63,8 +56,6 @@ public:
 
 private:
 	std::atomic<bool>   m_Run;
-	simpleLogger        m_SimpleLogger;
-	consoleLogger		m_ConsoleLogger;
 	queuedLogger        m_QueuedLogger;
 	ilogger&            m_MyLogger;
 	std::vector<std::thread> manyThreads;

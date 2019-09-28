@@ -155,23 +155,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="programManager.cpp" />
     <ClCompile Include="seriealizeFunctions.cpp" />
     <ClCompile Include="thread.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="consoleLogger.h" />
     <ClInclude Include="ilogger.h" />
     <ClInclude Include="iRun.h" />
     <ClInclude Include="iTread.h" />
-    <ClInclude Include="logger.h" />
-    <ClInclude Include="logging.h" />
     <ClInclude Include="programManager.h" />
     <ClInclude Include="queuedLogger.h" />
     <ClInclude Include="seriealizeFunctions.h" />
-    <ClInclude Include="SimpleLogger.h" />
     <ClInclude Include="thread.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
