@@ -9,3 +9,6 @@ You need to download Visual Studio 2019 and install it with the C++ development 
 
 [![Release Build Status](https://dev.azure.com/andreasfertl/andreasfertl/_apis/build/status/andreasfertl.homecontrol-learning?branchName=master)](https://dev.azure.com/andreasfertl/andreasfertl/_build/latest?definitionId=2&branchName=master)
 
+### Explanations/Instructions on my blog
+#### The power of interfaces: [link](https://www.experienceprogramming.net/?p=49)
+
