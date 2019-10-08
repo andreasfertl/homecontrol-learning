@@ -38,7 +38,7 @@ public:
 
 	//implementation of ilogger
 	void logg(const std::wstring& str) override {
-		//[2] one specific function
+		//[1] one specific function
 		//m_SerializeFunctions.run(std::bind(printme, str));
 
 		//[2] one specific class function
