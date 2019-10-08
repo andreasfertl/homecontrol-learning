@@ -47,8 +47,8 @@ public:
 		//[3] functor
 		//{
 		//	testPrinter testPrinterClassInstance;
-		//	m_SerializeFunctions.run(std::bind(&testPrinter::operator(), testPrinterClassInstance, str));
 		//	testPrinterClassInstance(str);
+		//	m_SerializeFunctions.run(std::bind(&testPrinter::operator(), testPrinterClassInstance, str));
 		//}
 
 		//[4] lambda
@@ -57,9 +57,9 @@ public:
 		//};
 		//m_SerializeFunctions.run(functionToPrintString);
 
-		//m_SerializeFunctions.run([str]() {
-		//	std::wcout << str;
-		//});
+		m_SerializeFunctions.run([str]() {
+			std::wcout << str;
+		});
 
 	};
 
