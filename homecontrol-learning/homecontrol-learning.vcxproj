@@ -165,10 +165,14 @@
     <ClInclude Include="ilogger.h" />
     <ClInclude Include="iRun.h" />
     <ClInclude Include="iTread.h" />
+    <ClInclude Include="logging.h" />
     <ClInclude Include="programManager.h" />
     <ClInclude Include="queuedLogger.h" />
     <ClInclude Include="seriealizeFunctions.h" />
     <ClInclude Include="thread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
